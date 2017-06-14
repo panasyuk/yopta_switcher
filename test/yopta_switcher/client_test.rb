@@ -1,17 +1,15 @@
 require 'test_helper'
 
 class ClientTest < Minitest::Test
-  attr_reader :client, :driver, :login_url, :logout_url
+  attr_reader :client, :driver, :login_url
 
   def setup
     @driver = Minitest::Mock.new
     @login_url = Object.new
-    @logout_url = Object.new
     @client =
       YoptaSwitcher::Client.new(
         driver: driver,
-        login_url: login_url,
-        logout_url: logout_url
+        login_url: login_url
       )
   end
 
@@ -37,14 +35,6 @@ class ClientTest < Minitest::Test
 
   def test_login_url_returns_login_url_param
     assert_equal client.login_url, login_url
-  end
-
-  def test_respond_to_logout_url
-    assert_respond_to client, :logout_url
-  end
-
-  def test_login_url_returns_login_url_param
-    assert_equal client.logout_url, logout_url
   end
 
   def test_respond_to_login

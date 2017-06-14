@@ -2,12 +2,11 @@ module YoptaSwitcher
   class Client
     DEFAULT_CLICKS_NUMBER = 15
 
-    attr_reader :driver, :login_url, :logout_url
+    attr_reader :driver, :login_url
 
-    def initialize(driver:, login_url:, logout_url:)
+    def initialize(driver:, login_url:)
       @driver = driver
       @login_url = login_url
-      @logout_url = logout_url
     end
 
     def login(login:, password:)
