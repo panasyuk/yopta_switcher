@@ -9,7 +9,7 @@ class TurnOffTest < Minitest::Test
     @password = Object.new
 
     @service =
-      YoptaSwitcher::TurnOff.new(
+      YoptaSwitcher::Operations::TurnOff.new(
         client: client,
         login: login,
         password: password
