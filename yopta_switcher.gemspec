@@ -14,7 +14,10 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/panasyuk/yopta_switcher'
   spec.license       = 'MIT'
 
-  spec.files         = Dir.glob File.join(File.dirname(__FILE__), 'lib/**/*')
+  spec.files         =
+    Dir.glob(File.join(File.dirname(__FILE__), 'lib/**/*')).push(
+      *Dir.glob(File.join(File.dirname(__FILE__), 'exe/**/*'))
+    )
 
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
