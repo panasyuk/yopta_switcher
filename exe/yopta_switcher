@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'bundler/setup'
 require 'yopta_switcher/cli'
 
 YoptaSwitcher::CLI.run(ARGV)
